@@ -17,6 +17,7 @@ import { Pressable } from 'react-native';
 import AntDesign from 'react-native-vector-icons/AntDesign';
 import AnimatedColorBox from '../components/animated-color-box';
 import TaskList from '../components/task-list';
+import TaskItem from '../components/task-item';
 import shortid from 'shortid';
 import Masthead from '../components/masthead';
 import NavBar from '../components/navbar';
@@ -53,6 +54,7 @@ const MainScreen: FunctionComponent<MainScreenProps> = ({
         <Box p={10} bg={useColorModeValue('red.500', 'yellow.500')}>
           <Text>MainScreen</Text>
         </Box>
+        <TaskItem isDone={checked} onToggleCheckbox={handlePressCheckbox} />
         <ThemeToggle />
       </VStack>
     </Center>
