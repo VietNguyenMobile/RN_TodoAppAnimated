@@ -7,13 +7,7 @@ const App = () => {
   return (
     <AppContainer>
       <Navigator />
-      {/* <View>
-        <Text>aaa</Text>
-      </View> */}
     </AppContainer>
-    // <View>
-    //   <Text>aaa</Text>
-    // </View>
   );
 };
 

@@ -17,7 +17,7 @@ const App = () => {
       initialRouteName="Main"
       drawerContent={props => <Sidebar {...props} />}
       screenOptions={{
-        headerShown: false,
+        // headerShown: false,
         drawerType: 'back',
         overlayColor: '#00000000',
       }}>

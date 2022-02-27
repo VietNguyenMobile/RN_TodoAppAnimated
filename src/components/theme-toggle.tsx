@@ -9,7 +9,7 @@ export default function ThemeToggle() {
       <Switch
         isChecked={colorMode === 'light'}
         onToggle={toggleColorMode}
-      ></Switch>
+      />
       <Text>Light</Text>
     </HStack>
   )

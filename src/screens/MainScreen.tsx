@@ -34,6 +34,8 @@ const MainScreen: FunctionComponent<MainScreenProps> = ({
   route,
 }) => {
   const [checked, setChecked] = useState(false);
+  const [subject, setSubject] = useState('Task Item');
+  const [isEditing, setIsEditing] = useState(false);
 
   const handlePressCheckbox = useCallback(() => {
     setChecked(prev => !prev);
@@ -45,8 +47,16 @@ const MainScreen: FunctionComponent<MainScreenProps> = ({
       _light={{ bg: 'blueGray.50' }}
       px={4}
       flex={1}>
-      <VStack space={5} alignItems="center">
-        <TaskItem isDone={checked} onToggleCheckbox={handlePressCheckbox} />
+      <VStack space={5} alignItems="center" w="full">
+        <TaskItem
+          isDone={checked}
+          isEditing={isEditing}
+          onToggleCheckbox={handlePressCheckbox}
+          subject={subject}
+          onPressLabel={() => setIsEditing(true)}
+          onChangeSubject={setSubject}
+          onFinishEditing={() => setIsEditing(false)}
+        />
         <Box w="100px" h="100px">
           <Pressable onPress={handlePressCheckbox}>
             <AnimatedCheckbox checked={checked} />

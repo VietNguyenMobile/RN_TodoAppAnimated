@@ -1,5 +1,6 @@
-import { View, Text } from 'react-native';
+import { View } from 'react-native';
 import React, { FunctionComponent } from 'react';
+import { Box, Text, VStack } from 'native-base';
 
 import { NativeStackScreenProps } from '@react-navigation/native-stack';
 import { DrawerParamType } from '../navigation';
@@ -11,9 +12,11 @@ const AboutScreen: FunctionComponent<AboutScreenProps> = ({
   route,
 }) => {
   return (
-    <View>
-      <Text>AboutScreen</Text>
-    </View>
+    <VStack flex={1}>
+      <Box >
+        <Text>AboutScreen</Text>
+      </Box>
+    </VStack>
   );
 };
 
