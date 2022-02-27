@@ -46,6 +46,7 @@ const MainScreen: FunctionComponent<MainScreenProps> = ({
       px={4}
       flex={1}>
       <VStack space={5} alignItems="center">
+        <TaskItem isDone={checked} onToggleCheckbox={handlePressCheckbox} />
         <Box w="100px" h="100px">
           <Pressable onPress={handlePressCheckbox}>
             <AnimatedCheckbox checked={checked} />
@@ -54,7 +55,6 @@ const MainScreen: FunctionComponent<MainScreenProps> = ({
         <Box p={10} bg={useColorModeValue('red.500', 'yellow.500')}>
           <Text>MainScreen</Text>
         </Box>
-        <TaskItem isDone={checked} onToggleCheckbox={handlePressCheckbox} />
         <ThemeToggle />
       </VStack>
     </Center>

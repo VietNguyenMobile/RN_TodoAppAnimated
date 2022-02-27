@@ -1,6 +1,10 @@
 import React, { useCallback, FunctionComponent } from 'react';
 import { PanGestureHandlerProps } from 'react-native-gesture-handler';
-import { NativeSyntheticEvent, TextInputChangeEventData } from 'react-native';
+import {
+  NativeSyntheticEvent,
+  TextInputChangeEventData,
+  Text,
+} from 'react-native';
 import {
   Pressable,
   Box,
@@ -18,6 +22,7 @@ import AnimatedTaskLabel from './animated-task-label';
 import SwipableView from './swipable-view';
 // import { Feather } from '@expo/vector-icons'
 import Feather from 'react-native-vector-icons/Feather';
+// import { Text } from 'react-native-svg';
 Feather.loadFont();
 
 // interface Props extends Pick<PanGestureHandlerProps, 'simultaneousHandlers'> {
@@ -181,16 +186,30 @@ const TaskItem: FunctionComponent<TaskItemProps> = ({
   // );
 
   return (
-    <Box width={30} height={30} mr={2}>
-      <Pressable onPress={onToggleCheckbox}>
-        <AnimatedCheckbox
-          highlightColor={highlightColor}
-          checkmarkColor={checkmarkColor}
-          boxOutlineColor={boxStroke}
-          checked={isDone}
-        />
-      </Pressable>
-    </Box>
+    <HStack
+      alignItems={'center'}
+      w="full"
+      px={4}
+      py={2}
+      bg={useColorModeValue('warmGray.50', 'primary.900')}>
+      <Box width={30} height={30} mr={2}>
+        <Pressable onPress={onToggleCheckbox}>
+          <AnimatedCheckbox
+            highlightColor={highlightColor}
+            checkmarkColor={checkmarkColor}
+            boxOutlineColor={boxStroke}
+            checked={isDone}
+          />
+        </Pressable>
+      </Box>
+      <AnimatedTaskLabel
+        strikethrough={isDone}
+        onPress={onToggleCheckbox}
+        textColor={activeTextColor}
+        inactiveTextColor={doneTextColor}>
+        Task Item
+      </AnimatedTaskLabel>
+    </HStack>
   );
 };
 
