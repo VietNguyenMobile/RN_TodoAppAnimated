@@ -103,7 +103,7 @@ const MainScreen: FunctionComponent<MainScreenProps> = ({
       bg={useColorModeValue('warmGray.50', 'primary.900')}
       w="full">
       <Masthead
-        title="What's up, Takuya!"
+        title="What's up, Viet Nguyen!"
         image={require('../assets/masthead.png')}>
         <NavBar />
       </Masthead>
